@@ -5,10 +5,12 @@ pages for clients. Org is `optidigi`. New site repos: `site-<slug>`, public, ima
 
 ## Repos in this workspace
 
-- `sandbox/` — this orchestrator. Holds CLAUDE.md, preflight.md, prompt.md, .claude/.
-- `sandbox/sitegen-template/` — Astro boilerplate (cloned, gitignored from orchestrator). Source for new sites.
-- `sandbox/sitegen-themes/` — theme building blocks under `astro/<name>/` and `plain/<name>/` (cloned, gitignored).
-- `sandbox/site-<slug>/` — ephemeral working copy per engagement. Created from template, deleted after deploy.
+You operate from the orchestrator root (the directory holding this `CLAUDE.md`). Wherever the operator cloned this repo — any path is fine — the sibling clones live as gitignored child dirs alongside it.
+
+- `./` — this orchestrator. Holds CLAUDE.md, preflight.md, prompt.md, .claude/.
+- `./sitegen-template/` — Astro boilerplate (cloned, gitignored). Source for new sites.
+- `./sitegen-themes/` — theme building blocks under `astro/<name>/` and `plain/<name>/` (cloned, gitignored).
+- `./site-<slug>/` — ephemeral working copy per engagement. Created from template, deleted after deploy.
 
 ## Subagents available
 
@@ -43,5 +45,4 @@ See the auditor's report and address must-fix items before requesting user sign-
 
 ## Re-engagements
 
-If client wants changes weeks later, `git clone optidigi/site-<slug>` back into
-`sandbox/site-<slug>/`, edit, push. Skip Phases 1–3, jump to whichever phase applies.
+If client wants changes weeks later, `git clone optidigi/site-<slug>` back into the orchestrator root as `./site-<slug>/`, edit, push. Skip Phases 1–3, jump to whichever phase applies.

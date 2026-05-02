@@ -6,14 +6,16 @@ See `docs/superpowers/specs/2026-05-02-sitegen-orchestrator-design.md` for the d
 
 ## Setup (fresh machine)
 
+Clone the orchestrator wherever you want it — any path works (`~/Code/sitegen/`, `~/projects/`, your Desktop, anywhere). The two sibling repos are cloned inside it; the orchestrator's `.gitignore` ignores them automatically.
+
 ```bash
-git clone git@github.com:optidigi/sitegen-orchestrator.git ~/Desktop/env/sandbox
-cd ~/Desktop/env/sandbox
+git clone git@github.com:optidigi/sitegen-orchestrator.git
+cd sitegen-orchestrator
 git clone git@github.com:optidigi/sitegen-template.git
 git clone git@github.com:optidigi/sitegen-themes.git
 ```
 
-Run Claude Code from this directory.
+Run Claude Code from inside `sitegen-orchestrator/`.
 
 ## Run a new site
 

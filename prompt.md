@@ -54,8 +54,9 @@ before you scaffold anything.
 
 ## Phase 2 — Scaffold
 
+Run from the orchestrator root (the directory holding this `prompt.md` — wherever the operator cloned the orchestrator).
+
 ```bash
-cd ~/Desktop/env/sandbox
 cp -r sitegen-template/. site-<slug>/
 cd site-<slug>
 rm -rf .git
@@ -205,8 +206,10 @@ Stop the dev server before moving on.
 
 ## Phase 9 — Publish
 
+From the orchestrator root:
+
 ```bash
-cd ~/Desktop/env/sandbox/site-<slug>
+cd site-<slug>
 git add -A
 git commit -m "feat: initial site"
 gh repo create optidigi/site-<slug> --public --source=. --remote=origin --push
@@ -232,8 +235,9 @@ docker run --rm -p 8080:80 ghcr.io/optidigi/site-<slug>:latest
 
 ## Phase 10 — Cleanup
 
+From the orchestrator root:
+
 ```bash
-cd ~/Desktop/env/sandbox
 rm -rf site-<slug>/
 ```
 
