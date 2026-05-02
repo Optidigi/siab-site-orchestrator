@@ -1,0 +1,22 @@
+# Sibling repos cloned alongside this orchestrator (have their own git)
+/sitegen-template/
+/sitegen-themes/
+/site-*/
+
+# Per-client raw materials, wherever the user drops them locally
+/client-input/
+/_clients/
+
+# Local Claude state
+.claude/projects/
+.claude/shell-snapshots/
+.claude/todos/
+.claude/statsig/
+.claude/ide/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
