@@ -8,11 +8,7 @@ do not proceed past it without the action specified.
 
 ## Phase 1 — Intake
 
-Confirm `gh` is authenticated (Phase 9 needs it for `gh repo create`, `gh run watch`, `gh api`):
-
-```bash
-gh auth status >/dev/null 2>&1 || { echo "FATAL: gh is not authenticated. Run 'gh auth login' (or check 'gh auth status' for details) before retrying."; exit 1; }
-```
+(Note: `gh` auth was verified in `preflight.md`'s "Environment readiness" check before you got here.)
 
 Walk the checklist below with the user, one section at a time. Accept "n/a"
 or "skip" per field. After all sections, summarize back what you captured.

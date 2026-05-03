@@ -4,6 +4,17 @@ This document gives you the context you need to run the sitegen workflow safely
 and well. After reading, summarize back to the user what you understood.
 **Do not open `prompt.md` until the user confirms.**
 
+## Environment readiness (run this first)
+
+Before reading the rest of this document, verify `gh` is authenticated. Phase 9
+needs it for `gh repo create`, `gh run watch`, and `gh api`. If this fails, stop
+and tell the operator to run `gh auth login` before retrying — there's no point
+continuing to read.
+
+```bash
+gh auth status >/dev/null 2>&1 || { echo "FATAL: gh is not authenticated. Run 'gh auth login' (or check 'gh auth status' for details) before retrying."; exit 1; }
+```
+
 ## Purpose & business model
 
 We sell cheap, quick, quality landing pages to small businesses. Target: sites
