@@ -2,8 +2,6 @@
 
 Workflow for spinning up cheap, quick, quality Astro landing pages under `optidigi/site-<slug>` with images on `ghcr.io`.
 
-See `docs/superpowers/specs/2026-05-02-sitegen-orchestrator-design.md` for the design.
-
 ## Setup (fresh machine)
 
 Clone the orchestrator wherever you want it — any path works (`~/Code/sitegen/`, `~/projects/`, your Desktop, anywhere). The two sibling repos are cloned inside it; the orchestrator's `.gitignore` ignores them automatically.
