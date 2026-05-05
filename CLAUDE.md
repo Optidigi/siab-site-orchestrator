@@ -1,4 +1,4 @@
-# sitegen-orchestrator — Claude Code conventions
+# siab-site-orchestrator — Claude Code conventions
 
 You are operating the **sitegen** workflow: producing one-pager / multi-page Astro landing
 pages for clients. Org is `optidigi`. New site repos: `site-<slug>`, public, images on `ghcr.io`.
@@ -8,8 +8,8 @@ pages for clients. Org is `optidigi`. New site repos: `site-<slug>`, public, ima
 You operate from the orchestrator root (the directory holding this `CLAUDE.md`). Wherever the operator cloned this repo — any path is fine — the sibling clones live as gitignored child dirs alongside it.
 
 - `./` — this orchestrator. Holds CLAUDE.md, preflight.md, prompt.md, .claude/.
-- `./sitegen-template/` — Astro boilerplate (cloned, gitignored). Source for new sites.
-- `./sitegen-themes/` — theme building blocks under `astro/<name>/` and `plain/<name>/` (cloned, gitignored).
+- `./siab-site-template/` — Astro boilerplate (cloned, gitignored). Source for new sites.
+- `./siab-site-themes/` — theme building blocks under `astro/<name>/` and `plain/<name>/` (cloned, gitignored).
 - `./site-<slug>/` — ephemeral working copy per engagement. Created from template, deleted after deploy.
 
 ## Subagents available
@@ -24,7 +24,7 @@ See `.claude/agents/*.md` for input/output contracts.
 
 1. Read `preflight.md` first when starting a new site. Summarize back what you understood. Wait for user confirmation.
 2. Then read `prompt.md` and run the 10-phase runbook.
-3. Never modify `sitegen-template/` or `sitegen-themes/` during a run. Only write into `site-<slug>/`.
+3. Never modify `siab-site-template/` or `siab-site-themes/` during a run. Only write into `site-<slug>/`.
 4. Never push to `main` of `site-<slug>` until the user has approved the preview (Phase 8 gate).
 5. Never strip the SEO baseline (sitemap, robots.txt, llms.txt, JSON-LD `Organization`, security headers).
 6. For non-trivial copy, dispatch the `copywriter` subagent — don't write copy inline.

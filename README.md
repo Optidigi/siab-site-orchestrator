@@ -1,4 +1,4 @@
-# sitegen-orchestrator
+# siab-site-orchestrator
 
 Workflow for spinning up cheap, quick, quality Astro landing pages under `optidigi/site-<slug>` with images on `ghcr.io`.
 
@@ -7,13 +7,13 @@ Workflow for spinning up cheap, quick, quality Astro landing pages under `optidi
 Clone the orchestrator wherever you want it — any path works (`~/Code/sitegen/`, `~/projects/`, your Desktop, anywhere). The two sibling repos are cloned inside it; the orchestrator's `.gitignore` ignores them automatically.
 
 ```bash
-git clone git@github.com:optidigi/sitegen-orchestrator.git
-cd sitegen-orchestrator
-git clone git@github.com:optidigi/sitegen-template.git
-git clone git@github.com:optidigi/sitegen-themes.git
+git clone git@github.com:Optidigi/siab-site-orchestrator.git
+cd siab-site-orchestrator
+git clone git@github.com:Optidigi/siab-site-template.git
+git clone git@github.com:Optidigi/siab-site-themes.git
 ```
 
-Run Claude Code from inside `sitegen-orchestrator/`.
+Run Claude Code from inside `siab-site-orchestrator/`.
 
 ## Run a new site
 
