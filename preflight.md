@@ -28,9 +28,9 @@ published to ghcr.io and user confirmed deploy".
 ## The deploy chain end-to-end
 
 ```
-sitegen-template (boilerplate) ─┐
-                                ├─→ site-<slug>/ (your working copy) ─→ optidigi/site-<slug> repo
-sitegen-themes (theme used)   ─┘                                           │
+siab-site-template (boilerplate) ─┐
+                                  ├─→ site-<slug>/ (your working copy) ─→ optidigi/site-<slug> repo
+siab-site-themes (theme used)   ─┘                                           │
                                                                             │  push to main
                                                                             ↓
                                                   GitHub Actions (publish.yml)
@@ -95,14 +95,14 @@ See full contracts in `.claude/agents/*.md`.
 
 ## Anti-patterns (don't do these)
 
-- Don't invent themes — pick from `sitegen-themes/` or ask the user for a path
+- Don't invent themes — pick from `siab-site-themes/` or ask the user for a path
   / source.
 - Don't push to `site-<slug>`'s `main` until the user approves preview.
 - Don't strip the SEO baseline. If a theme breaks it, fix the theme integration
   — not the baseline.
 - Don't write non-trivial copy inline. Dispatch `copywriter` so the main
   context stays clean.
-- Don't modify `sitegen-template/` or `sitegen-themes/` during a run. Land
+- Don't modify `siab-site-template/` or `siab-site-themes/` during a run. Land
   template/theme improvements in their own PRs between runs.
 - Don't `rm -rf` until Phase 10 (cleanup) and only on `site-<slug>/`. Never on
   template, themes, or orchestrator.

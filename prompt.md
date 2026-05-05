@@ -23,7 +23,7 @@ or "skip" per field. After all sections, summarize back what you captured.
 
 ### Scope
 - One-pager or multi-page? If multi: list pages with their slugs
-- **Theme** to use — path under `sitegen-themes/` (e.g. `astro/cleanco`),
+- **Theme** to use — path under `siab-site-themes/` (e.g. `astro/cleanco`),
   or "pick for me" with a brief
 - **Forms** needed? (default: mailto. Web3Forms if a working POST form is
   required; user supplies the access key)
@@ -59,7 +59,7 @@ before you scaffold anything.
 Run from the orchestrator root (the directory holding this `prompt.md` — wherever the operator cloned the orchestrator).
 
 ```bash
-cp -r sitegen-template/. site-<slug>/
+cp -r siab-site-template/. site-<slug>/
 cd site-<slug>
 rm -rf .git
 git init -b main
@@ -81,7 +81,7 @@ Verify: `pnpm install && pnpm astro check` succeeds.
 ## Phase 3 — Theme integration
 
 If the user gave a theme path:
-- Read `sitegen-themes/<path>/theme.json` (if present) and the theme files.
+- Read `siab-site-themes/<path>/theme.json` (if present) and the theme files.
 - For Astro themes: copy/adapt components into `src/components/<theme>/`. Map
   the theme's color tokens into `src/styles/global.css` `@theme` block and
   `tailwind.config.ts` `brand`/`accent` colors.
@@ -90,7 +90,7 @@ If the user gave a theme path:
   paste raw HTML into pages; componentize.
 
 If the user said "pick for me":
-- Read each `theme.json` in `sitegen-themes/{astro,plain}/` and propose 2–3
+- Read each `theme.json` in `siab-site-themes/{astro,plain}/` and propose 2–3
   themes that match the brief, with one-line rationale each.
 - Wait for user pick, then proceed as above.
 
