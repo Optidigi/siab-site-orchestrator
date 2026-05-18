@@ -92,8 +92,44 @@ Verify: `pnpm install && pnpm astro check` succeeds.
 If the user gave a theme path:
 - Read `siab-site-themes/<path>/theme.json` (if present) and the theme files.
 - For Astro themes: copy/adapt components into `src/components/<theme>/`. Map
-  the theme's color tokens into `src/styles/global.css` `@theme` block and
-  `tailwind.config.ts` `brand`/`accent` colors.
+  the theme's tokens into `src/styles/global.css` `@theme` block in three
+  categories:
+
+  **(a) Color tokens** (`--color-brand`, `--color-accent`, etc.) — also
+  mirror in `tailwind.config.ts` for editor autocomplete.
+
+  **(b) Font role tokens** — `--font-title`, `--font-heading`, `--font-text`,
+  `--font-script`, `--font-serif`, `--font-sans`. The template ships
+  placeholder values (`ui-serif, Georgia, serif` etc.) that themes override
+  with their real font stacks.
+
+  **(c) Radius role tokens** — `--radius-sm`, `--radius-md`, `--radius-lg`.
+  Same placeholder-override pattern. The template ships `0.25rem` / `0.5rem`
+  / `1rem` defaults.
+
+  Example `@theme {}` block after theme integration:
+  ```css
+  @theme {
+    --color-brand: <theme primary>;
+    --color-brand-fg: <fg on brand>;
+    --color-accent: <theme accent>;
+    --color-accent-fg: <fg on accent>;
+    --font-title:   <theme display stack>;
+    --font-heading: <theme heading stack>;
+    --font-text:    <theme body stack>;
+    --font-script:  <theme script stack — optional>;
+    --radius-sm: <theme tight radius>;
+    --radius-md: <theme default radius>;
+    --radius-lg: <theme card radius>;
+  }
+  ```
+
+  These role tokens are consumed by `src/components/cms/*` block renderers
+  via inline `style` props (post-CMS-ification surface). In static-mode the
+  tokens apply to any theme content that uses the same `var(--*)`
+  references; themes that don't acknowledge the role tokens render via
+  their own `font-family`/`border-radius` declarations and the placeholders
+  sit unused.
 - For plain HTML/CSS/JS: adapt into Astro components — extract recurring
   blocks (header, footer, hero, feature row) into `src/components/`. Don't
   paste raw HTML into pages; componentize.
