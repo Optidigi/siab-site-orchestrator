@@ -73,6 +73,15 @@ Then:
   hours, serviceArea, socials, nav (matches scope).
 - Update `public/manifest.json` (name, short_name, theme_color).
 - Update `public/.well-known/security.txt` Canonical to the primary domain.
+- Generate the per-tenant siteManifest by copying the template's example:
+  ```bash
+  cp siteManifest.example.json siteManifest.json
+  ```
+  The CMS-ified version of this site (post-`siab-payload-orchestrator`)
+  will read `siteManifest.json` to seed `Tenant.siteManifest`. The
+  `.example.json` stays in place as documentation/restoration source.
+  You can narrow `blocks[]` later (Phase 4) if the chosen theme/content
+  uses fewer than all 7 page-block types.
 
 Verify: `pnpm install && pnpm astro check` succeeds.
 
