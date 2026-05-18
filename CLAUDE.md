@@ -12,6 +12,16 @@ You operate from the orchestrator root (the directory holding this `CLAUDE.md`).
 - `./siab-site-themes/` — theme building blocks under `astro/<name>/` and `plain/<name>/` (cloned, gitignored).
 - `./site-<slug>/` — ephemeral working copy per engagement. Created from template, deleted after deploy.
 
+## Downstream CMS-ification contract
+
+Sites produced by this orchestrator are designed to be cleanly CMS-ified by `siab-payload-orchestrator`. To stay compatible:
+
+- **Phase 2 always generates `siteManifest.json`** at site repo root (per-tenant manifest read by payload-seeder during CMS-ification). Template ships `siteManifest.example.json` as the source.
+- **Phase 3 maps theme tokens into the full role-token set** — `--font-{title,heading,text,script,serif,sans}` + `--radius-{sm,md,lg}` — not just colors. The template's `src/components/cms/*` renderers consume these via inline `style` props for the post-CMS-ification rendering surface.
+- **The template ships `src/components/cms/*` renderers + `RtNodeRenderer`** for the post-CMS-ification surface. These are inert in static-mode (only invoked via the wave-3 preview-iframe) and become live when `site-converter` (in `siab-payload-orchestrator`) rewires page routes during Phase 5 of CMS-ification.
+
+Reviewer Phase 7 gates on `siteManifest.json` presence — sites missing it can't ship.
+
 ## Subagents available
 
 - `copywriter` — page copy + meta with SEO/tone awareness. Dispatch in Phase 4.
