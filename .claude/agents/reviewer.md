@@ -26,6 +26,11 @@ brief. You don't modify anything.
 - Security headers wired in `nginx.conf` (CSP, X-Frame-Options,
   X-Content-Type-Options at minimum).
 - `astro.config.mjs` has the correct `site` URL (matches primary domain).
+- `siteManifest.json` present at site repo root (per-tenant manifest used by
+  `siab-payload-orchestrator` during CMS-ification). If absent, raise as
+  blocking — Phase 2 should have generated it from `siteManifest.example.json`.
+  Do NOT auto-fix; the operator should re-run Phase 2's `cp` step manually so
+  they understand the dependency.
 
 ### Brief alignment
 - Every page from the scope list exists as both a route and a content file.
