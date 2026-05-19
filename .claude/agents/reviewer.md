@@ -31,6 +31,12 @@ brief. You don't modify anything.
   blocking — Phase 2 should have generated it from `siteManifest.example.json`.
   Do NOT auto-fix; the operator should re-run Phase 2's `cp` step manually so
   they understand the dependency.
+  - The `blocks[]` array inside the manifest gates the CMS "Add block" menu
+    once the tenant is seeded. Tenants that intentionally use only a subset
+    of the 7 block types should declare just those slugs; omitting `blocks`
+    falls back to "all 7 visible" (backwards-compatible default). Convention
+    + valid slugs documented in `siab-site-template/README.md`
+    § "`siteManifest.blocks[]` — the per-tenant CMS block menu".
 
 ### Brief alignment
 - Every page from the scope list exists as both a route and a content file.
