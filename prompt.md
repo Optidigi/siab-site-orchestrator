@@ -140,7 +140,8 @@ If the user said "pick for me":
 - Wait for user pick, then proceed as above.
 
 Verify: `pnpm dev`, eyeball at `http://localhost:4321`. Header/footer/nav
-match theme. Tailwind colors hot-reload. Build `pnpm build` succeeds.
+match theme. Tailwind colors hot-reload. `pnpm check:responsive` and
+`pnpm build` both succeed.
 
 ---
 
@@ -201,6 +202,7 @@ JSON-LD:
 ## Phase 6 — Build & audit
 
 ```bash
+pnpm check:responsive
 pnpm build        # fix any errors before continuing
 pnpm dev          # in background — capture the URL it prints
 ```

@@ -65,6 +65,8 @@ brief. You don't modify anything.
 - `dist/` exists and contains `index.html` for every page in scope.
 - `dist/sitemap-0.xml` lists every page in scope.
 - `cat dist/index.html | grep -c application/ld+json` ≥ 1.
+- `pnpm check:responsive` exits 0. Treat any failure as blocking; the checker
+  is the source of truth for the OBS-62 site-frame responsive canvas contract.
 
 ## Output format
 

@@ -5,6 +5,7 @@
       "Bash(pnpm install --frozen-lockfile)",
       "Bash(pnpm add:*)",
       "Bash(pnpm build)",
+      "Bash(pnpm check:responsive)",
       "Bash(pnpm dev)",
       "Bash(pnpm astro check)",
       "Bash(pnpm astro:*)",
